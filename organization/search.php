@@ -34,5 +34,5 @@ header("Access-Control-Allow-Origin: *");
     }
     else{
         http_response_code(404);
-        echo json_encode(array("message" => "Товары не найдены."),JSON_UNESCAPED_UNICODE);
+        echo json_encode(array("message" => "Организации не найдены."),JSON_UNESCAPED_UNICODE);
     }

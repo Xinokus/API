@@ -19,12 +19,12 @@ header("Access-Control-Allow-Origin: *");
     $orders->organizationname = $data->organizationname;
     if($orders->update()){
         http_response_code(200);
-        echo json_encode(array("message" => "Организация обновлен."),
+        echo json_encode(array("message" => "Поставка обновлена."),
             JSON_UNESCAPED_UNICODE);
     }
     else
     {
         http_response_code(583);
-        echo json_encode(array("message" => "Невозможно обновить организацию."),
+        echo json_encode(array("message" => "Невозможно обновить поставку."),
             JSON_UNESCAPED_UNICODE);
     }

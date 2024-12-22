@@ -40,5 +40,5 @@ if ($num > 0) {
 
 } else {
     http_response_code(404);
-    echo json_encode(array("message" => "Договора не найдены"), JSON_UNESCAPED_UNICODE);
+    echo json_encode(array("message" => "Сотрудник не найдены"), JSON_UNESCAPED_UNICODE);
 }

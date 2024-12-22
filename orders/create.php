@@ -23,18 +23,18 @@ use objects\Orders;
 
         if ($orders->create()) {
             http_response_code(201);
-            echo json_encode(array("message" => "Организация была создана."),
+            echo json_encode(array("message" => "Поставка была создана."),
                 JSON_UNESCAPED_UNICODE);
         }
         else
         {
             http_response_code(503);
-            echo json_encode(array("message" => "Невозможно создать организацию."),
+            echo json_encode(array("message" => "Невозможно создать поставку."),
             JSON_UNESCAPED_UNICODE);
         }
     }
     else
     {
         http_response_code(400);
-        echo json_encode(array("message" => "Невозможно создать организацию. Данные неполные", JSON_UNESCAPED_UNICODE));
+        echo json_encode(array("message" => "Невозможно создать поставку. Данные неполные", JSON_UNESCAPED_UNICODE));
     }

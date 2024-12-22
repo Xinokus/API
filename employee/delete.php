@@ -13,12 +13,12 @@ $data = json_decode(file_get_contents("php://input"));
 $employee->employeeid = $data->employeeid;
 if($employee->delete()) {
     http_response_code(200);
-    echo json_encode(array("message" => "Договор удален."),
+    echo json_encode(array("message" => "Сотрудник удален."),
         JSON_UNESCAPED_UNICODE);
 }
 else
 {
     http_response_code(503);
-    echo json_encode(array("message" => "Невозможно удалить договор."),
+    echo json_encode(array("message" => "Невозможно удалить сотрудника."),
         JSON_UNESCAPED_UNICODE);
 }

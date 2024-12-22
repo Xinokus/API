@@ -22,12 +22,12 @@ header("Access-Control-Allow-Origin: *");
     $employee->employeemonth = $data->employeemonth;
     if($employee->update()){
         http_response_code(200);
-        echo json_encode(array("message" => "Договор обновлен."),
+        echo json_encode(array("message" => "Сотрудник обновлен."),
             JSON_UNESCAPED_UNICODE);
     }
     else
     {
         http_response_code(583);
-        echo json_encode(array("message" => "Невозможно обновить договор."),
+        echo json_encode(array("message" => "Невозможно обновить сотрудника."),
             JSON_UNESCAPED_UNICODE);
     }

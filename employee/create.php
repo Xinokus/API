@@ -26,18 +26,18 @@ use objects\Employee;
 
         if ($employee->create()) {
             http_response_code(201);
-            echo json_encode(array("message" => "Договор был создан."),
+            echo json_encode(array("message" => "Сотрудник был создан."),
                 JSON_UNESCAPED_UNICODE);
         }
         else
         {
             http_response_code(503);
-            echo json_encode(array("message" => "Невозможно создать договор."),
+            echo json_encode(array("message" => "Невозможно создать сотрудника."),
             JSON_UNESCAPED_UNICODE);
         }
     }
     else
     {
         http_response_code(400);
-        echo json_encode(array("message" => "Невозможно создать договор. Данные неполные", JSON_UNESCAPED_UNICODE));
+        echo json_encode(array("message" => "Невозможно создать сотрудника. Данные неполные", JSON_UNESCAPED_UNICODE));
     }

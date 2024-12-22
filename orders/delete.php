@@ -13,12 +13,12 @@ $data = json_decode(file_get_contents("php://input"));
 $orders->orderid = $data->orderid;
 if($orders->delete()) {
     http_response_code(200);
-    echo json_encode(array("message" => "Организация удалена."),
+    echo json_encode(array("message" => "Поставка удалена."),
         JSON_UNESCAPED_UNICODE);
 }
 else
 {
     http_response_code(503);
-    echo json_encode(array("message" => "Невозможно удалить организацию."),
+    echo json_encode(array("message" => "Невозможно удалить поставку."),
         JSON_UNESCAPED_UNICODE);
 }

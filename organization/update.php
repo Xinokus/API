@@ -20,7 +20,7 @@ header("Access-Control-Allow-Origin: *");
     $organization->website = $data->website;
     if($organization->update()){
         http_response_code(200);
-        echo json_encode(array("message" => "Организация обновлен."),
+        echo json_encode(array("message" => "Организация обновлена."),
             JSON_UNESCAPED_UNICODE);
     }
     else
