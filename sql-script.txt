@@ -1,0 +1,46 @@
+create table Employee
+(
+	EmployeeID serial primary key,
+	SectionID int not null,
+	FirstName varchar(32) not null,
+	MiddleName varchar(32),
+	LastName varchar(32) not null,
+	WorkPosition varchar(64) not null,
+	Earnings int not null,
+	Special int,
+	EmployeeMonth varchar(12) not null
+);
+create table Agreement
+(
+	AgreementID serial primary key,
+	OrganizationName varchar(64),
+	AgreementDate date not null,
+	EmployeeID int not null
+);
+create table Organization
+(
+	OrganizationName varchar(64) primary key,
+	AgreementID int not null,
+	CountryID int not null,
+	Address varchar(64) not null,
+	Phone varchar(20) not null,
+	EMail varchar(64) not null,
+	Website varchar(64)
+);
+create table Orders
+(
+	OrderID serial primary key,
+	AgreementID int not null,
+	EquipmentType varchar(64) not null,
+	UsersComment varchar(255),
+	EmployeeID int,
+	OrganizationName varchar(64) not null,
+	
+	foreign key (AgreementID) references Agreement(AgreementID),
+	foreign key (EmployeeID) references Employee(EmployeeID)
+);
+
+alter table organization add foreign key (AgreementID) references Agreement(AgreementID);
+alter table agreement add foreign key (OrganizationName) references Organization(OrganizationName);
+alter table Agreement add foreign key (EmployeeID) references Employee(EmployeeID);
+alter table Orders add foreign key (OrganizationName) references Organization(OrganizationName)
